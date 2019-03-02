@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form method="post" action="~/Incidenti/Add">
+    <table border="1">
+        <tr><th colspan="2" style="background-color:lightgray">Prijava Incidenta</th></tr>
+        <tr>
+            <th style="background-color:lightgray">Naziv</th>
+            <td><input type="text" name="naziv" /></td>
+        </tr>
+        <tr>
+            <th style="background-color:lightgray">Opis</th>
+            <td><input type="text" name="opis" /></td>
+        </tr>
+        <tr>
+            <th style="background-color:lightgray">Boja</th>
+            <td>
+                <select name="boja">
+                    <option value="red">Crvena</option>
+                    <option value="yellow">Zuta</option>
+                    <option value="green">Zelena</option>
+                </select>
+            </td>
+        </tr>
+        <tr><td colspan="2"><input type="submit" value="Add" /></td></tr>
+    </table>
+</form>
+<br /><hr />
+
+<a href="~/Incidenti/Crveni">Izlistaj Crvene</a>
+<hr />
+<a href="~/Incidenti/Zuti">Izlistaj Zute</a>
+<hr />
+<a href="~/Incidenti/Zeleni">Izlistaj Zelene</a>
+<hr />
+<a href="~/Incidenti/List">Izlistaj Sve</a>
+
+<hr />
+<form method="get" action="~/Incidenti/Search">
+    <input type="text" name="key" /> <input type="submit" value="Search" />
+</form>

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<table border="1">
+    <tr><th>Naziv</th><th>Opis</th><th>Boja</th><th>Prioritet</th><th>&nbsp;</th><th>&nbsp;</th><th>&nbsp;</th></tr>
+    @{ 
+        foreach (Incident i in ViewBag.incidenti)
+        {
+            <tr>
+            <td>@i.naziv</td><td>@i.opis</td><td style="background-color:@i.boja">@i.boja</td><td>@i.prioritet</td>
+            <td><form method="post" action="~/Incidenti/Delete">
+                    <input type="text" name="key" value="@i.naziv" hidden />
+                    <input type="submit" value="Obrisi" />
+                </form>
+            </td>
+            <td>
+                <form method="post" action="~/Incidenti/Plus">
+                    <input type="text" name="key" value="@i.naziv" hidden />
+                    <input type="submit" value="Povecaj Prioritet" />
+                </form>
+            </td>
+            <td>
+                <form method="post" action="~/Incidenti/Minus">
+                    <input type="text" name="key" value="@i.naziv" hidden />
+                    <input type="submit" value="Smanji Prioritet" />
+                </form>
+            </td>
+            </tr>
+        }
+    }
+</table>
+
+<br /><hr /><br />
+<a href="~/Incidenti/Index">Home Page</a>

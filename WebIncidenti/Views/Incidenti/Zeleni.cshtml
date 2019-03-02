@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Zeleni";
+}
+
+<h2>Zeleni</h2>
+
+
+<table border="1">
+    <tr><th>Naziv</th><th>Opis</th><th>Boja</th></tr>
+    @{
+        foreach (Incident i in ViewBag.incidenti.collection.Values)
+        {
+            if (i.boja == "green")
+            {
+                <tr><td>@i.naziv</td><td>@i.opis</td><td style="background-color:@i.boja">@i.boja</td></tr>
+            }
+        }
+    }
+</table>
+<br /><hr /><br />
+<a href="~/Incidenti/Index">Home Page</a>
